@@ -1,4 +1,7 @@
 
 </hr>
-<?php echo $this->msg; ?>
 
+
+<div class="page-content">
+    <?php echo $this->msg; ?>
+</div>

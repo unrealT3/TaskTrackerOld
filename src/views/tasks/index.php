@@ -5,19 +5,18 @@ $objects = $this->objects;
 
 ?>
 
-
-
-<?php
+<div class="page-content">
+    <?php
     if(isset($this->msg)){
-        echo $this->msg;
+        echo '<div class="msg">' . $this->msg . '</div>';
     }
 
-?>
+    ?>
 
-<?php
+    <?php
     if($objects){?>
 
-        <table>
+        <table cellspacing="10" borderspacing="8">
             <tr>
                 <th>Task Name</th>
                 <th>Task Details</th>
@@ -41,4 +40,5 @@ $objects = $this->objects;
     echo '<a href="tasks/add"> Add Task </a>';
 
 
-?>
+    ?>
+</div>

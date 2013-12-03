@@ -1,7 +1,7 @@
 </div>
 
 <div id="footer">
- (C) Footer
+ <p>Copyright 2013 | Hebert Development</p>
 </div>
 </body>
 </html>

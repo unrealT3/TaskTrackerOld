@@ -1,4 +1,7 @@
 
 </hr>
-This is the help page.
+<div class="page-content">
+    <p>This is the help page</p>
+</div>
+
 

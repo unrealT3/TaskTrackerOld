@@ -4,13 +4,13 @@
 		<title>MVC</title>
 		<link rel="stylesheet" href="<?php echo URL; ?>public/css/default.css" />
 		<script type="text/javascript" src="<?php echo URL; ?>public/js/jquery2.0.3.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Gorditas:400,700' rel='stylesheet' type='text/css'>
 	</head>
 	
 	<body>
 		<?php Session::init(); ?>
 		<div id="header">
-			Header
-			<br />
+
 			<a href="<?php echo URL; ?>index">Index</a>
 			<a href="<?php echo URL; ?>help">Help</a>
 
