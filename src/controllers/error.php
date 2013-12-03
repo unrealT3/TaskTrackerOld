@@ -1,8 +1,12 @@
 <?php
- 
-/**
- * 
- */
+
+/*
+* error.php
+* this handles the page errors
+*
+* author:Trevor Hebert
+*
+*/
 class Error extends Controller {
 	
 	function __construct() {

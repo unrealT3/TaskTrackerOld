@@ -1,5 +1,11 @@
 <?php
-
+/*
+* view.php
+* this defines the views
+*
+* author:Trevor Hebert
+*
+*/
 class View{
 	function __construct() {
 		

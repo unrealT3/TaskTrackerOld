@@ -1,5 +1,11 @@
 <?php
-
+/*
+* index.php
+* this handles the home page
+*
+* author:Trevor Hebert
+*
+*/
 class Index extends Controller{
 	function __construct() {
 		parent::__construct();

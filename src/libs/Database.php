@@ -1,4 +1,11 @@
 <?php
+/*
+* Database.php
+* this connects the database
+*
+* author:Trevor Hebert
+*
+*/
     class Database extends PDO
     {
     	public function __construct(){

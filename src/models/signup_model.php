@@ -1,4 +1,11 @@
 <?php
+/*
+* signup_model.php
+* this defines the signup model
+*
+* author:Trevor Hebert
+*
+*/
 class Signup_Model extends Model
 {
     public function __construct(){

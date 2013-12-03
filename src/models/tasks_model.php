@@ -1,4 +1,11 @@
 <?php
+/*
+* tasks_model.php
+* this defines the tasks model
+*
+* author:Trevor Hebert
+*
+*/
 class Tasks_Model extends Model
 {
     public function __construct(){

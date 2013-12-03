@@ -1,8 +1,12 @@
 <?php
-	
-/**
- * 
- */
+
+/*
+* Bootstrap.php
+* this handles the application
+*
+* author:Trevor Hebert
+*
+*/
 class Bootstrap {
 	
 	function __construct() {

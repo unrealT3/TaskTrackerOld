@@ -1,5 +1,11 @@
 <?php
-   
+/*
+* help.php
+* this handles the help
+*
+* author:Trevor Hebert
+*
+*/
 	class Help extends Controller {
 		function __construct() {
 			parent::__construct();

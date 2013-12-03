@@ -1,5 +1,11 @@
 <?php
-
+/*
+* Controller.php
+* this defines a controller
+*
+* author:Trevor Hebert
+*
+*/
 class Controller {
 	function __construct(){
 		

@@ -1,4 +1,11 @@
 <?php
+/*
+* signup.php
+* this handles the sign ups
+*
+* author:Trevor Hebert
+*
+*/
 
 class Signup extends Controller{
     function __construct() {

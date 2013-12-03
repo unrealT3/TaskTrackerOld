@@ -1,4 +1,11 @@
 <?php
+/*
+* login_model.php
+* this defines the login model
+*
+* author:Trevor Hebert
+*
+*/
     class Login_Model extends Model
     {
     	public function __construct(){

@@ -1,4 +1,11 @@
 <?php
+/*
+* Dashboard.php
+* this handles the user dashboard
+*
+* author:Trevor Hebert
+*
+*/
 
 class Dashboard extends Controller{
 	function __construct() {

@@ -1,4 +1,11 @@
 <?php
+/*
+* Session.php
+* this defines the sessions
+*
+* author:Trevor Hebert
+*
+*/
     class Session{
     	public static function init(){
     		@session_start();
