@@ -26,6 +26,7 @@
                 //redirect to dashboard
 				header('location: ../dashboard');
 
+
 			}
 			else{
 				//no dice
