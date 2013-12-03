@@ -25,7 +25,19 @@ class Tasks_Model extends Model
             return $results;
         }
 
-
     }
+
+    public function addTask(){
+        Session::init();
+        $userID = Session::get('userID');
+        $sth = $this->db->prepare("Insert INTO tasks VALUES ('', :taskName, :taskDetails, $userID )");
+        $sth ->execute(array(
+            ':taskName' => $_POST['taskName'],
+            ':taskDetails' => $_POST['taskDetails']
+        ));
+
+        header('location: ../tasks/addSuccess');
+    }
+
 }
 ?>
