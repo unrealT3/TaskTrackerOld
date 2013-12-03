@@ -7,9 +7,9 @@
     	}
     	public function run(){
     		
-    		$sth = $this->db->prepare("SELECT id FROM users WHERE login = :login AND password = :password");
+    		$sth = $this->db->prepare("SELECT id FROM users WHERE username = :username AND password = :password");
 			$sth->execute(array(
-				':login' => $_POST['login'],
+				':username' => $_POST['username'],
 				':password' => $_POST['password']
 			));
 			
