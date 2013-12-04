@@ -1,0 +1,104 @@
+/*
+* default.css
+* this is the main css page
+*
+* author:Trevor Hebert
+*
+*/
+
+body {
+  background:lightgray;
+  margin:0;
+  h1{
+    color:#3399FF;
+    text-transform: uppercase;
+    font-family: 'Gorditas', cursive ;
+    font-weight: normal;
+
+
+  }
+  p{
+    font-size:18px;
+  }
+
+  #header {
+    padding:40px;
+    background-image:-webkit-linear-gradient(top, #1A4C80, #3399FF);
+    background-image:-moz-linear-gradient(top, #1A4C80, #3399FF);
+    a{
+      padding:10px 20px;
+      background-color:white;
+      border-radius:3px;
+      text-decoration: none;
+      color:black;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    a:hover{
+      background-color:gray;
+      color:white;
+    }
+  }
+
+  #content{
+    background: #3399FF;
+    padding:30px 40px ;
+
+    .page-content{
+      background-color:white;
+      padding:20px;
+      border-radius:3px;
+      a{
+        padding:10px;
+        background: #3399FF;
+        border-radius: 3px;
+        color:White;
+        text-decoration: none;
+        margin-top:15px;
+      }
+      a:hover{
+        background: #297ACC;
+      }
+
+      .msg{
+        color:green;
+      }
+
+      .user-info{
+        .username, .email, .first-name, .last-name{
+          display:inline-block;
+        }
+      }
+
+      form {
+        label{
+          width:100px;
+          display:inline-block;
+          color:#3399FF;
+        }
+        input{
+          border:1px solid #3399FF;
+          border-radius: 3px;
+        }
+
+
+      }
+      table{
+        margin-bottom:30px;
+        th{
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  #footer{
+    background-image:-webkit-linear-gradient(top, #3399FF, #1A4C80);
+    background-image:-moz-linear-gradient(top, #3399FF, #1A4C80);
+    padding:40px;
+    p{
+      color:white;
+    }
+  }
+}
+

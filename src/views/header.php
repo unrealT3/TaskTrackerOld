@@ -16,7 +16,10 @@
 
             <?php if(Session::get('loggedIn') == true){?>
                 <a href="<?php echo URL;?>tasks">Tasks</a>
-                <?php } ?>
+            <?php } ?>
+            <?php if(Session::get('loggedIn') == true){?>
+                <a href="<?php echo URL;?>profile">My Profile</a>
+            <?php } ?>
             <?php if (Session::get('loggedIn') == true){?>
                 <a href="<?php echo URL;?>dashboard/logout">Logout</a>
             <?php }else{?>
