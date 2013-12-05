@@ -12,6 +12,7 @@ require 'libs/Model.php';
 require 'libs/Database.php';
 require 'libs/Session.php';
 
+
 //config
 require 'config/paths.php';
 require 'config/database.php';

@@ -6,19 +6,14 @@
  */
 
 class Profile extends Controller{
-    function __construct(){
+    function __construct(User $user){
         parent::__construct();
-        Session::init();
-        $logged = Session::get('loggedIn');
-        if($logged == false){
-            Session::destroy();
-            header('location: '.URL .'login');
-            exit;
-        }
+        $this->user = $user;
     }
 
     function index(){
         $this->view->objects = $this->model->getProfileInfo();
+        $this->view->user = $this->user;
 
         $this->view->render('profile/index');
     }

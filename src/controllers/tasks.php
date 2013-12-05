@@ -8,25 +8,32 @@
 */
 
 class Tasks extends Controller{
-    function __construct(){
+    function __construct(User $user){
         parent::__construct();
-        Session::init();
-        $logged = Session::get('loggedIn');
-        if($logged == false){
-            Session::destroy();
-            header('location: '.URL .'login');
-            exit;
+        $this->user = $user;
+
+
+        if($this->user->isLoggedIn()){
+
         }
+        else
+        {
+            header('location: login');
+
+
+
+    }
     }
 
     function index(){
         $this->view->objects = $this->model->getTasks();
-
+        $this->view->user = $this->user;
         $this->view->render('tasks/index');
 
     }
 
     function add(){
+        $this->view->user = $this->user;
         $this->view->render('tasks/add');
     }
 
@@ -35,6 +42,7 @@ class Tasks extends Controller{
     }
 
     function addSuccess(){
+        $this->view->user = $this->user;
         $this->view->msg = "Successfully added task";
         $this->index();
     }

@@ -7,12 +7,14 @@
 *
 */
 	class Help extends Controller {
-		function __construct() {
+		function __construct(User $user) {
 			parent::__construct();
+            $this->user = $user;
 			
 		}
 		
 		function index(){
+            $this->view->user = $this->user;
 			$this->view->render('help/index');
 		}
 		

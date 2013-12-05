@@ -21,6 +21,8 @@
 			if(isset($_SESSION[$key])){
 				return $_SESSION[$key];	
 			}
+
+
 			
 		}
 		public static function destroy()

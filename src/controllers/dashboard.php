@@ -8,21 +8,16 @@
 */
 
 class Dashboard extends Controller{
-	function __construct() {
+	function __construct(User $user) {
 		parent::__construct();
-		Session::init();
-		$logged = Session::get('loggedIn');
-		if($logged == false){
-			Session::destroy();
-			header('location: login');
-			exit;
-		}
+		$this->user = $user;
 		
 	}
 	
 	function index(){
-		
+		$this->view->user = $this->user;
 		$this->view->render('dashboard/index');
+
 	}
 	
 	function logout(){

@@ -8,7 +8,8 @@
 *
 */
 class Bootstrap {
-	
+
+    protected $user;
 	function __construct() {
 
         //grabs the url
@@ -16,8 +17,9 @@ class Bootstrap {
 		$url = rtrim($url, '/');	
 			
 		$url = explode('/', $url);
-		
-		
+
+        require 'controllers/user.php';
+        $this->user = new User();
         /*
 		 *
 		 * Empty url. Home page
@@ -27,7 +29,7 @@ class Bootstrap {
 		 */
 		if(empty($url[0])){
 			require 'controllers/index.php';
-			$controller = new Index();
+			$controller = new Index($this->user);
 			$controller->index();
 			return false;
 		}
@@ -55,7 +57,10 @@ class Bootstrap {
          * creates an instance of the controller
          * calls load model to load the model
          */
-		$controller = new $url[0];
+
+
+
+		$controller = new $url[0]($this->user);
 		$controller->loadModel($url[0]);
 
 
@@ -94,7 +99,7 @@ class Bootstrap {
 	}	
 		function error() {
 			require 'controllers/error.php';
-			$controller = new Error();
+			$controller = new Error($this->user);
 			$controller->index();
 			return false;
 		}
