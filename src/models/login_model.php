@@ -1,7 +1,11 @@
 <?php
 /*
 * login_model.php
-* this defines the login model
+* author:Trevor Hebert
+ *
+* The login model checks the DB for the inputted username and password.
+*
+* Returns a logged in flag and DB results
 *
 * author:Trevor Hebert
 *

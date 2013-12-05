@@ -11,12 +11,18 @@ class Index extends Controller{
 		parent::__construct();
 		$this->user = $user;
 	}
-	
+
+    /*
+     * renders index page
+     */
 	function index(){
         $this->view->user = $this->user;
 		$this->view->render('index/index');
 	}
-	
+
+    /*
+     * renders details page
+     */
 	function details(){
 		$this->view->render('index/index');
 	}

@@ -12,19 +12,25 @@ class Login extends Controller{
 		parent::__construct();
         $this->user = $user;
 	}
-	
+
+    /*
+     * renders index page
+     */
 	function index(){
 		$this->view->user = $this->user;
 		$this->view->render('login/index');
 	}
-	
+
+    /*
+     *  login page
+     */
 	function login(){
 		$userInfo = $this->model->AttemptLogin();
         echo $userInfo;
         echo 'geg';
         if($userInfo[0]){
             $this->user->authenticated($userInfo[1]);
-            echo $this->user->getUsername();
+
 
 
         }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2013 at 05:08 AM
+-- Generation Time: Dec 05, 2013 at 04:59 AM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.3
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `tasks` (
   `task_details` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`task_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `tasks`
@@ -46,7 +46,11 @@ INSERT INTO `tasks` (`task_id`, `task_name`, `task_details`, `user_id`) VALUES
 (3, 'Task three', 'task three details', 2),
 (4, 'new task', ' task detailss', 6),
 (5, 'asdsd', 'asdd', 6),
-(6, 'new tassk', ' newwss', 6);
+(6, 'new tassk', ' newwss', 6),
+(7, 'newest task', 'its cool', 6),
+(8, 'dentist appointment', 'It sucks', 6),
+(9, 'doctors appointment', 'on wednesday', 6),
+(10, 'newestt', 'sdfsdf', 6);
 
 -- --------------------------------------------------------
 

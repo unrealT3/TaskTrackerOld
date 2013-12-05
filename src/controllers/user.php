@@ -1,7 +1,12 @@
 <?php
 /*
  * user.php
- * creates the user object
+ * This class handles the user object.
+ *
+ *
+ * Starts the session
+ * Sets session info
+ *
  */
 
 class User extends Controller{
