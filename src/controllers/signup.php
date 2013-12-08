@@ -1,11 +1,12 @@
 <?php
-/*
-* signup.php
-* this handles the sign ups
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:28 PM
+ *
+ * This is the signup controller
+ */
 
 class Signup extends Controller{
     function __construct(User $user) {

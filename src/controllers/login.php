@@ -1,11 +1,12 @@
 <?php
-/*
-* login.php
-* this handles the login
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:28 PM
+ *
+ * This is the login controller
+ */
 class Login extends Controller{
 
 	function __construct(User $user) {
@@ -26,7 +27,6 @@ class Login extends Controller{
      */
 	function login(){
 		$userInfo = $this->model->AttemptLogin();
-        echo $userInfo;
         if($userInfo[0]){
             $this->user->authenticated($userInfo[1]);
         }

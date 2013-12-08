@@ -47,6 +47,9 @@ class User{
     function getUsername(){
         return Session::get('username');
     }
+    function getFirstName(){
+        return Session::get('firstName');
+    }
 
 
 }

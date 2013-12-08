@@ -1,11 +1,12 @@
 <?php
-/*
-* Dashboard.php
-* this handles the user dashboard
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:28 PM
+ *
+ * This handles the user dashboard
+ */
 
 class Dashboard extends Controller{
 	function __construct(User $user) {

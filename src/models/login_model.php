@@ -14,7 +14,12 @@
     		parent::__construct();
     		
     	}
-    	public function attemptLogin(){
+
+        /**
+         * This function checks if the username and password inputted matches one from the database
+         * @return array (isloggedin, $results)
+         */
+        public function attemptLogin(){
     		
     		$sth = $this->db->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
 			$sth->execute(array(

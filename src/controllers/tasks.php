@@ -1,11 +1,12 @@
 <?php
-/*
-* tasks.php
-* this handles the tasks
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:28 PM
+ *
+ * This is the tasks controller
+ */
 
 class Tasks extends Controller{
     function __construct(User $user){

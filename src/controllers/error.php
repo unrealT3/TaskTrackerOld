@@ -1,12 +1,13 @@
 <?php
 
-/*
-* error.php
-* this handles the page errors
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:28 PM
+ *
+ * This is the error controller
+ */
 class Error extends Controller {
 	
 	function __construct(User $user) {

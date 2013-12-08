@@ -1,8 +1,11 @@
 <?php
-/*
- * profile.php
- * this handles the user profile
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:28 PM
  *
+ * This is the profile controller
  */
 
 class Profile extends Controller{

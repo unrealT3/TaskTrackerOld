@@ -16,18 +16,21 @@ $user = $this->user;
 		<?php Session::init(); ?>
 		<div id="header">
 
-			<a href="<?php echo URL; ?>index">Index</a>
-			<a href="<?php echo URL; ?>help">Help</a>
+
+        <ul class="nav">
             <?php if($user->isLoggedIn()){?>
-            <a href="<?php echo URL; ?>profile">My Profile</a>
-            <a href="<?php echo URL; ?>tasks">My Tasks</a>
-            <a href="<?php echo URL; ?>dashboard/logout">Logout</a>
+            <li><a href="<?php echo URL; ?>dashboard">Dashboard</a></li>
+            <li><a href="<?php echo URL; ?>profile">My Profile</a></li>
+            <li><a href="<?php echo URL; ?>tasks">My Tasks</a></li>
+            <li><a href="<?php echo URL; ?>dashboard/logout">Logout</a></li>
             <?php }
             else
             {?>
-            <a href="<?php echo URL; ?>login">Login</a>
+            <li><a href="<?php echo URL; ?>index">Index</a></li>
+            <li><a href="<?php echo URL; ?>login">Login</a></li>
+            <li><a href="<?php echo URL; ?>signup">Sign-up</a></li>
             <?php }?>
-
+        </ul>
 
 				
 			

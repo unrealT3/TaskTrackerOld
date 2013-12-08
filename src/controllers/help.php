@@ -1,11 +1,12 @@
 <?php
-/*
-* help.php
-* this handles the help
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:28 PM
+ *
+ * This is the help controller
+ */
 	class Help extends Controller {
 		function __construct(User $user) {
 			parent::__construct();
