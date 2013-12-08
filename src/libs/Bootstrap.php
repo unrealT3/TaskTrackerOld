@@ -22,12 +22,7 @@ class Bootstrap {
         //do this after
         require 'controllers/user.php';
         $this->user = new User();
-<<<<<<< HEAD
 
-        if(!$url[0]){
-            $url[0] = "index";
-        }
-=======
         /*
 		 *
          * ToDo: make this a processUrl function(array $url)
@@ -39,7 +34,7 @@ class Bootstrap {
 		if(empty($url[0])){
 			$url[0] = 'index';
 		}
->>>>>>> 07cbacaec6e6cfdf279713ba286f0a6da795a153
+
 
 
 
