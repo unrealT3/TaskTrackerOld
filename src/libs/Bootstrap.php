@@ -1,112 +1,103 @@
 <?php
 
-/*
-* Bootstrap.php
-* this handles the application
-* todo:make fileloader class
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:28 PM
+ *
+ * This is the application class
+ */
 class Bootstrap {
 
     protected $user;
-	function __construct() {
+    protected $fileLoader;
 
-        //grabs the url
-        //ToDo: make this a getUrl function(returns array)
-		$url = isset($_GET['url']) ? $_GET['url'] : null;
-		$url = rtrim($url, '/');	
-			
-		$url = explode('/', $url);
+    //takes in a fileLoader object
+	function __construct(FileLoader $fileLoader) {
 
-        //do this after
-        require 'controllers/user.php';
+        //create the fileloader
+        $this->fileLoader = $fileLoader;
+        //create a user
         $this->user = new User();
 
-        /*
-		 *
-         * ToDo: make this a processUrl function(array $url)
-		 * Empty url. Home page
-		 * creates index controller
-		 * calls index function
-		 * stops execution
-		 */
-		if(empty($url[0])){
-			$url[0] = 'index';
-		}
+        //start the app
+        $url = $this->getUrl();
+
+        $this->processUrl($url, $this->user);
+	}
+
+    /*
+        * This function gets the url
+        *
+        * @return array
+        */
+    function getUrl(){
+        $url = isset($_GET['url']) ? $_GET['url'] : 'index'; //if no url is set then set url to index for homepage
+        $url = rtrim($url, '/');
+        $url = explode('/', $url);
+        return $url;
+    }
 
 
+    /*
+     * This function processes the url and grabs the necessary controllers
+     *
+     * $params url - an array of urls inputs
+     * @params user - the user object
+     * @error calls error controller
+     */
+
+    function processUrl(array $url, User $user){
+
+        if($this->fileLoader->checkFileExists(($url[0]), 'controller')){
+            $this->fileLoader->loadControllerFile($url[0]);
+            $controller = new $url[0]($user);
+            $controller->loadModel($url[0]);
+
+            // [0]controller/[1]method/[2]ARGUMENT
+            if(isset($url[2])){ //if argument was set
+                //check if method exists
+                if(method_exists($controller, $url[1])){
+                    //call that method with the inputted argument
+                    $controller->{$url[1]}($url[2]);
+                }
+                else //no method create error
+                {
+                    $this->createError($user);
+                }
 
 
-        /*
-         * ToDo:put this in processUrl
-         * assumes a url was typed in
-         * requires controller file
-         * if controller file not found then error
-         */
-		$controllerFile = 'controllers/' . $url[0] . '.php';
-		if (file_exists($controllerFile)){
-			require $controllerFile;
-		}
-		else{
-			$this->error(); // stops program
-			//require 'controllers/error.php';
-			//$controller = new Error();
-			//return false;
-		}
-
-        /*
-         *
-         * creates an instance of the controller
-         * calls load model to load the model
-         */
+            }
+            else if(isset($url[1])){ // if method was set
+                    if(method_exists($controller, $url['1'])){
+                        $controller->{$url[1]}();
+                    }else{
+                        $this->fileLoader->loadControllerFile('error');
+                        $controller = new Error($user);
+                        $controller->index();
+                        //return false;
+                    }
+                }
+            else{
+                //call index of controller
+                $controller->index();
+            }
 
 
-        //todo:put this in processUrl
-		$controller = new $url[0]($this->user);
-		$controller->loadModel($url[0]);
+        }
+        else
+        {
+            $this->createError($user);
+            //return false;
+        }
+    }
 
-
-
-		/*
-		 * //todo:put this in processUrl
-		 * checks if argument was typed in
-		 * checks if method exists in controller
-		 * if not set error
-		 */
-		if(isset($url[2])){
-			if(method_exists($controller, $url[1])){
-				$controller->{$url[1]}($url[2]);	
-			} else{
-				$this->error();
-			}
-			
-				
-		}	
-		else {
-			if(isset($url[1])){
-				if(method_exists($controller, $url['1'])){
-					$controller->{$url[1]}();
-				}else{
-					$this->error();
-				}
-			}
-			else{
-				$controller->index();
-			}
-			
-		}
-		
-		
-		
-		
-	}	//todo:this will be in error class
-		function error() {
-			require 'controllers/error.php';
-			$controller = new Error($this->user);
-			$controller->index();
-			return false;
-		}
+    function createError($user){
+        $this->fileLoader->loadControllerFile('error');
+        $controller = new Error($user);
+        $controller->index();
+    }
 		
 			
 	

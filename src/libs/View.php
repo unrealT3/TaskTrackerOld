@@ -1,11 +1,12 @@
 <?php
-/*
-* view.php
-* this defines the views
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:18 PM
+ *
+ * This defines the view
+ */
 class View{
 	function __construct() {
 		

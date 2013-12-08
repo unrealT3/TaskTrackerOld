@@ -1,11 +1,12 @@
 <?php
-/*
-* signup_model.php
-* this defines the signup model
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:18 PM
+ *
+ * This handles the user signup
+ */
 class Signup_Model extends Model
 {
     public function __construct(){

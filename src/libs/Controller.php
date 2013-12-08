@@ -1,11 +1,12 @@
 <?php
-/*
-* Controller.php
-* this defines a controller
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:25 PM
+ *
+ * This defines a controller
+ */
 class Controller {
 	function __construct(){
 		

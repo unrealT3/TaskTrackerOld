@@ -1,11 +1,12 @@
 <?php
-/*
-* Database.php
-* this connects the database
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:18 PM
+ *
+ * This initiates the connection to the database
+ */
     class Database extends PDO
     {
     	public function __construct(){

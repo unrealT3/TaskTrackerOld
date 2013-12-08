@@ -1,11 +1,12 @@
 <?php
-/*
-* database.php
-* this defines the database info
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:18 PM
+ *
+ * This defines the database info
+ */
 
     define('DB_TYPE', 'mysql');
 	define('DB_HOST', 'localhost');

@@ -5,12 +5,14 @@ $user = $this->user;
 <html>
 	<head>
 		<title>MVC</title>
-		<link rel="stylesheet" href="<?php echo URL; ?>public/css/default.css" />
-		<script type="text/javascript" src="<?php echo URL; ?>public/js/jquery2.0.3.js"></script>
+		<link rel="stylesheet" type="text/css" href="<?php echo URL;?>/public/css/default.css" />
         <link href='http://fonts.googleapis.com/css?family=Gorditas:400,700' rel='stylesheet' type='text/css'>
+
 	</head>
+
 	
 	<body>
+
 		<?php Session::init(); ?>
 		<div id="header">
 
@@ -18,6 +20,7 @@ $user = $this->user;
 			<a href="<?php echo URL; ?>help">Help</a>
             <?php if($user->isLoggedIn()){?>
             <a href="<?php echo URL; ?>profile">My Profile</a>
+            <a href="<?php echo URL; ?>tasks">My Tasks</a>
             <a href="<?php echo URL; ?>dashboard/logout">Logout</a>
             <?php }
             else

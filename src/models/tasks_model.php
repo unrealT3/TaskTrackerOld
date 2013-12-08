@@ -1,11 +1,12 @@
 <?php
-/*
-* tasks_model.php
-* this defines the tasks model
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:18 PM
+ *
+ * This handles the getting/adding tasks
+ */
 class Tasks_Model extends Model
 {
     public function __construct(){

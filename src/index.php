@@ -1,21 +1,24 @@
 <?php
-/*
- * index.php
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:00 PM
+ *
  * This starts the application
  */
-//use an autoloader
-//library
-require 'libs/Bootstrap.php';
-require 'libs/Controller.php';
-require 'libs/View.php';
-require 'libs/Model.php';
-require 'libs/Database.php';
-require 'libs/Session.php';
+
+//library & configfiles
+require 'libs/FileLoader.php';
+//base files to be loaded
+$libraryFiles = array("Bootstrap", "Controller", "View", "Model", "Database", "Session", "User");
+$configFiles = array("paths", "database");
 
 
-//config
-require 'config/paths.php';
-require 'config/database.php';
 //le application
-$app = new Bootstrap();
+$fileLoader = new FileLoader();
+$fileLoader->loadConfigFiles($configFiles);
+$fileLoader->loadLibraryFiles($libraryFiles);
+
+$app = new Bootstrap($fileLoader);
 ?>

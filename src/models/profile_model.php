@@ -1,11 +1,12 @@
 <?php
-/*
-* profile_model.php
-* this defines the profile model
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:18 PM
+ *
+ * This handles the user profile
+ */
 class Profile_Model extends Model
 {
     public function __construct(){

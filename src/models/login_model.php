@@ -1,15 +1,12 @@
 <?php
-/*
-* login_model.php
-* author:Trevor Hebert
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:18 PM
  *
-* The login model checks the DB for the inputted username and password.
-*
-* Returns a logged in flag and DB results
-*
-* author:Trevor Hebert
-*
-*/
+ * The login model handles logging in
+ */
     class Login_Model extends Model
     {
         protected $isLoggedIn;

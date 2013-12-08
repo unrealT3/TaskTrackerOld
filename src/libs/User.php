@@ -1,15 +1,17 @@
 <?php
-/*
- * user.php
- * This class handles the user object.
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:18 PM
  *
+ * This handles the user object
  *
  * Starts the session
- * Sets session info
- *
+ * Sets the session info
  */
 
-class User extends Controller{
+class User{
 
     function __construct(){
 

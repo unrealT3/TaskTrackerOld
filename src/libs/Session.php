@@ -1,11 +1,12 @@
 <?php
-/*
-* Session.php
-* this defines the sessions
-*
-* author:Trevor Hebert
-*
-*/
+/**
+ * Created by PhpStorm.
+ * User: trevorhebert
+ * Date: 13-12-07
+ * Time: 9:18 PM
+ *
+ * This handles the Session info
+ */
     class Session{
     	public static function init(){
     		@session_start();
