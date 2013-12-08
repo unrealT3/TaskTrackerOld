@@ -20,19 +20,10 @@ class Bootstrap {
 
         require 'controllers/user.php';
         $this->user = new User();
-        /*
-		 *
-		 * Empty url. Home page
-		 * creates index controller
-		 * calls index function
-		 * stops execution
-		 */
-		if(empty($url[0])){
-			require 'controllers/index.php';
-			$controller = new Index($this->user);
-			$controller->index();
-			return false;
-		}
+
+        if(!$url[0]){
+            $url[0] = "index";
+        }
 
 
 

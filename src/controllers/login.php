@@ -27,12 +27,8 @@ class Login extends Controller{
 	function login(){
 		$userInfo = $this->model->AttemptLogin();
         echo $userInfo;
-        echo 'geg';
         if($userInfo[0]){
             $this->user->authenticated($userInfo[1]);
-
-
-
         }
 
 	}
