@@ -37,7 +37,7 @@ $objects = $this->objects;
 
 
 
-    echo '<a href="tasks/add"> Add Task </a>';
+    echo '<a href="'.URL.'tasks/add"> Add Task </a>';
 
 
     ?>
