@@ -9,8 +9,9 @@
  */
 class Login extends Controller{
 
-	function __construct(User $user) {
-		parent::__construct();
+	function __construct(User $user, $controllerName, FileLoader $fileLoader) {
+		parent::__construct($controllerName, $fileLoader);
+        $this->view->user = $user;
         $this->user = $user;
 	}
 
@@ -18,7 +19,6 @@ class Login extends Controller{
      * renders index page
      */
 	function index(){
-		$this->view->user = $this->user;
 		$this->view->render('login/index');
 	}
 

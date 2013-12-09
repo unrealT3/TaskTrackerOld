@@ -9,32 +9,23 @@
  */
 
 class Tasks extends Controller{
-    function __construct(User $user){
-        parent::__construct();
-        $this->user = $user;
+    function __construct(User $user, $controllerName, FileLoader $fileLoader){
+        parent::__construct($controllerName, $fileLoader);
+        $this->view->user = $user;
+        $this->view->objects = $this->model->getTasks();
 
-
-        if($this->user->isLoggedIn()){
-
-        }
-        else
-        {
+        if(!$user->isLoggedIn()){
             header('location: login');
-
-
-
-    }
+        }
     }
 
     function index(){
-        $this->view->objects = $this->model->getTasks();
-        $this->view->user = $this->user;
+
         $this->view->render('tasks/index');
 
     }
 
     function add(){
-        $this->view->user = $this->user;
         $this->view->render('tasks/add');
     }
 
@@ -43,7 +34,6 @@ class Tasks extends Controller{
     }
 
     function addSuccess(){
-        $this->view->user = $this->user;
         $this->view->msg = "Successfully added task";
         $this->index();
     }

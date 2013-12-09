@@ -8,6 +8,7 @@
  * This defines the view
  */
 class View{
+
 	function __construct() {
 		
 	}

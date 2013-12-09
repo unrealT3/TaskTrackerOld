@@ -8,21 +8,30 @@
  * This defines a controller
  */
 class Controller {
-	function __construct(){
-		
+
+	function __construct($controllerName, FileLoader $fileLoader){
+        $modelName = ucfirst($controllerName) . '_Model';
 		$this->view = new View();
-		
+
+        //create model if the file is found
+        if($fileLoader->checkFileExists($controllerName, "model")){
+            $fileLoader->loadModelFile($controllerName);
+            $this->createModelObject($modelName);
+        }
+
+
 	}
 
-    //
-	public function loadModel($name) {
-		$path = 'models/' . $name . '_model.php';
-		
-		if(file_exists($path)) {
-			require 'models/'  . $name . '_model.php';
-			$modelName = $name . '_Model';
-			$this->model = new $modelName;
-		}
-	}
+    /**
+     * This function instantiates a model object
+     * @param $modelName - name of model object to be created
+     */
+
+    public function createModelObject($modelName){
+        $this->model = new $modelName;
+    }
+
+
+
 }
 ?>

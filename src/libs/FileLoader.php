@@ -9,10 +9,11 @@
  */
 
 class FileLoader {
-    protected $controllerBasePath = 'controllers/';
-    protected $libraryBasePath = 'libs/';
-    protected $configBasePath = 'config/';
-    protected $suffix = '.php';
+    private $controllerBasePath = 'controllers/';
+    private $libraryBasePath = 'libs/';
+    private $configBasePath = 'config/';
+    private $modelBasePath = 'models/';
+    private $suffix = '.php';
 
     /**
      * This function is only called if the file exists and it loads the controller file
@@ -59,6 +60,15 @@ class FileLoader {
                 {
                     return false;
                 }
+            case "model":
+                if(file_exists($this->modelBasePath . $fileName  . '_model' . $this->suffix)){
+                    return true;
+
+                }
+                else
+                {
+                    return false;
+                }
             default:
                 echo 'that filetype is fucked';
         }
@@ -92,11 +102,24 @@ class FileLoader {
             $configPath = $this->configBasePath . $fileName . $this->suffix;
             if(file_exists($configPath)){
                 require $configPath;
+
             }
             else
             {
                 echo '<pre><strong>Warning: </strong>The <strong>Config</strong> file ' . $fileName . $this->suffix . ' does not exist and was not loaded in ' . URL .$this->configBasePath . '</pre>';
             }
+        }
+
+    }
+
+    /**
+     * This function checks if the model file exists and requires it
+     * @param $fileName - The file name to be loaded
+     */
+    function loadModelFile($fileName){
+        $modelPath = $this->modelBasePath . $fileName . '_model' . $this->suffix;
+        if(file_exists($modelPath)){
+            require $modelPath;
         }
 
     }

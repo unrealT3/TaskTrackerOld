@@ -9,8 +9,8 @@
  */
 
 class Dashboard extends Controller{
-	function __construct(User $user) {
-		parent::__construct();
+	function __construct(User $user, $controllerName, FileLoader $fileLoader) {
+		parent::__construct($controllerName, $fileLoader);
 		$this->user = $user;
 		
 	}

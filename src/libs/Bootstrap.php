@@ -18,16 +18,17 @@ class Bootstrap {
 
         //create the fileloader
         $this->fileLoader = $fileLoader;
+
         //create a user
         $this->user = new User();
 
         //start the app
         $url = $this->getUrl();
 
-        $this->processUrl($url, $this->user);
+        $this->processUrl($url);
 	}
 
-    /*
+    /**
         * This function gets the url
         *
         * @return array
@@ -40,7 +41,7 @@ class Bootstrap {
     }
 
 
-    /*
+    /**
      * This function processes the url and grabs the necessary controllers
      *
      * $params url - an array of urls inputs
@@ -48,14 +49,16 @@ class Bootstrap {
      * @error calls error controller
      */
 
-    function processUrl(array $url, User $user){
+    function processUrl(array $url){
 
         if($this->fileLoader->checkFileExists(($url[0]), 'controller')){
             $this->fileLoader->loadControllerFile($url[0]);
-            $controller = new $url[0]($user);
-            $controller->loadModel($url[0]);
+            $controller = new $url[0]($this->user, $url[0], $this->fileLoader);
 
-            // [0]controller/[1]method/[2]ARGUMENT
+
+            /**
+             * [0]controller/[1]method/[2]ARGUMENT
+             */
             if(isset($url[2])){ //if argument was set
                 //check if method exists
                 if(method_exists($controller, $url[1])){
@@ -64,7 +67,7 @@ class Bootstrap {
                 }
                 else //no method create error
                 {
-                    $this->createError($user);
+                    $this->createError();
                 }
 
 
@@ -74,7 +77,7 @@ class Bootstrap {
                         $controller->{$url[1]}();
                     }else{
                         $this->fileLoader->loadControllerFile('error');
-                        $controller = new Error($user);
+                        $controller = new Error($this->user, $url[0], $this->fileLoader);
                         $controller->index();
                         //return false;
                     }
@@ -88,14 +91,17 @@ class Bootstrap {
         }
         else
         {
-            $this->createError($user);
+            $this->createError();
             //return false;
         }
     }
 
-    function createError($user){
+    /**
+     * This function creates an error controller
+     */
+    function createError(){
         $this->fileLoader->loadControllerFile('error');
-        $controller = new Error($user);
+        $controller = new Error($this->user, "", $this->fileLoader);
         $controller->index();
     }
 		
