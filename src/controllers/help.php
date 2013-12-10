@@ -11,7 +11,8 @@
 		function __construct(User $user) {
 			parent::__construct();
             $this->user = $user;
-			
+            $page = new Page($controllerName);
+            $this->view->page = $page;
 		}
 		
 		function index(){

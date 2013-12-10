@@ -11,7 +11,7 @@
 //
 require 'libs/FileLoader.php';
 //base files to be loaded
-$libraryFiles = array("Bootstrap", "Controller", "View", "Model", "Database", "Session", "User");
+$libraryFiles = array("Bootstrap", "Controller", "View", "Model", "Database", "Session", "User", "Page");
 $configFiles = array("paths", "database");
 
 

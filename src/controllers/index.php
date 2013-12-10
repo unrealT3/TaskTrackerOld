@@ -20,8 +20,9 @@ class Index extends Controller{
     function __construct(User $user, $controllerName, FileLoader $fileLoader) {
 
 		parent::__construct($controllerName, $fileLoader);
+        $page = new Page($controllerName);
+        $this->view->page = $page;
         $this->view->user = $user;
-
 
 
 	}

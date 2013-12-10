@@ -13,6 +13,8 @@ class Tasks extends Controller{
         parent::__construct($controllerName, $fileLoader);
         $this->view->user = $user;
         $this->view->objects = $this->model->getTasks();
+        $page = new Page($controllerName);
+        $this->view->page = $page;
 
         if(!$user->isLoggedIn()){
             header('location: login');

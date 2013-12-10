@@ -12,7 +12,8 @@ class Dashboard extends Controller{
 	function __construct(User $user, $controllerName, FileLoader $fileLoader) {
 		parent::__construct($controllerName, $fileLoader);
 		$this->user = $user;
-		
+        $page = new Page($controllerName);
+        $this->view->page = $page;
 	}
 	
 	function index(){

@@ -1,5 +1,6 @@
 <?php
 $user = $this->user;
+$page = $this->page;
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +12,7 @@ $user = $this->user;
 	</head>
 
 	
-	<body>
+	<body class="<?php echo $page->pageName; ?>">
 
 		<?php Session::init(); ?>
 		<div id="header">
@@ -19,16 +20,16 @@ $user = $this->user;
 
         <ul class="nav">
             <?php if($user->isLoggedIn()){?>
-            <li><a href="<?php echo URL; ?>dashboard">Dashboard</a></li>
-            <li><a href="<?php echo URL; ?>profile">My Profile</a></li>
-            <li><a href="<?php echo URL; ?>tasks">My Tasks</a></li>
-            <li><a href="<?php echo URL; ?>dashboard/logout">Logout</a></li>
+            <li><a class="dashboard" href="<?php echo URL; ?>dashboard">Dashboard</a></li>
+            <li><a class="profile" href="<?php echo URL; ?>profile">My Profile</a></li>
+            <li><a class="tasks" href="<?php echo URL; ?>tasks">My Tasks</a></li>
+            <li><a class="logout" href="<?php echo URL; ?>dashboard/logout">Logout</a></li>
             <?php }
             else
             {?>
-            <li><a href="<?php echo URL; ?>index">Index</a></li>
-            <li><a href="<?php echo URL; ?>login">Login</a></li>
-            <li><a href="<?php echo URL; ?>signup">Sign-up</a></li>
+            <li><a class="index" href="<?php echo URL; ?>index">Index</a></li>
+            <li><a class="login" href="<?php echo URL; ?>login">Login</a></li>
+            <li><a class="signup" href="<?php echo URL; ?>signup">Sign-up</a></li>
             <?php }?>
         </ul>
 

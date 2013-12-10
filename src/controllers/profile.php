@@ -13,6 +13,8 @@ class Profile extends Controller{
         parent::__construct($controllerName, $fileLoader);
         $this->view->user = $user;
         $this->view->objects = $this->model->getProfileInfo();
+        $page = new Page($controllerName);
+        $this->view->page = $page;
     }
 
     function index(){
