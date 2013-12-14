@@ -9,8 +9,14 @@
 class Page{
 
     public $pageName;
-    function __construct($pageName){
+    public $menu;
+
+    function __construct($pageName, User $user){
         $this->pageName = $pageName;
+
+        $menu = new Menu(array("Index","Login", "Sign-Up"));
+        $this->menu = $menu->getMenuItems($user);
+
     }
 
     function getPageName(){

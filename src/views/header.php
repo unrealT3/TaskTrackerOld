@@ -1,6 +1,7 @@
 <?php
 $user = $this->user;
 $page = $this->page;
+$menu = $this->page->menu;
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,6 +33,12 @@ $page = $this->page;
             <li><a class="signup" href="<?php echo URL; ?>signup">Sign-up</a></li>
             <?php }?>
         </ul>
+
+            <?php foreach($menu as $menuItem)
+                {
+                    print_r($menuItem);
+                }
+            ?>
 
 				
 			
