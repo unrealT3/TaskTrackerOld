@@ -7,6 +7,6 @@
  *
  * This creates global variable URL
  */
-    define('URL', 'http://localhost/TaskTracker/src/');
+    define('URL', 'http://localhost/TaskTrackerOld/src/');
 
 ?>
